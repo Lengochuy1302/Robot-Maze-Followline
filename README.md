@@ -134,10 +134,14 @@ Lựa chọn thiết bị và kết cấu xe
 | Nguồn Pin 9v| 4 |   | ![image](https://user-images.githubusercontent.com/54675603/182275661-d70ab0b9-a269-4ea2-b296-5745ba2d2229.png)|
 
 #### C. Phần điều khiển
-- Sơ đồ khối của Robot </br>
+- Sơ đồ khối của Robot 
+
 ![image](https://user-images.githubusercontent.com/54675603/182276414-5b1000b4-feee-4326-9c69-1f9fe83ae6ca.png)
-- Khối mạch cảm biến </br>
+
+- Khối mạch cảm biến
+
 ![image](https://user-images.githubusercontent.com/54675603/182276452-4c8cbab6-a637-4fb5-ae05-9e6d99a9aac6.png)
+
 #### D. Thuật toán dò đường trong mê cung – Thuật toán Maze 
 Thuật toán Maze là một quy tắc nổi tiếng nhất để vượt qua mê cung, còn được gọi là quy tắc tay trái hoặc quy tắc tay phải. Nếu mê cung chỉ liên thông đơn giản nghĩa là tất cả các bức tường của nó được kết nối với nhau hoặc kết nối với đường bao quanh mê cung, thì bằng cách dò một tay lên một bức tường của mê cung thì người đi đảm bảo không bị lạc và tìm được lối ra nếu có một lối ra trên đường bao; hoặc nếu không có lối ra thì sẽ quay trở lại lối vào và sẽ đi qua tất cả các đường của mê cung ít nhất 1 lần.</br></br>
 Nếu các bức tường được kết nối, thì có thể được kéo giãn biến dạng thành một vòng lặp hoặc vòng tròn. Do đó, bức tường buộc người đi theo xung quanh một vòng tròn từ điểm đầu đến cuối.</br>
@@ -148,9 +152,10 @@ Các bước trong giải quyết mê cung là gì ?</br></br>
 Về cơ bản có 2 bước: đầu tiên là để Robot đi qua các mê cung và tìm thấy những kết thúc của nó. Thứ hai là để tối ưu hóa các con đường đó để Robot của có thể đi trở lại thông qua các mê cung.</br></br>
 Làm thế nào để các robot tìm thấy sự kết thúc của mê cung ?</br></br>
 Chúng ta sử dụng một kỹ thuật gọi là bàn tay trái trên tường. Hãy tưởng tượng bạn đang ở trong một mê cung và bạn luôn giữ tay trái của bạn trên các cạnh của bức tường và đi theo hướng tay trái. Làm điều này cuối cùng sẽ giúp bạn có được ra khỏi một mê cung mà  không lặp lại đường cũ.</br></br>
-Các tình huống có thể gặp :</br>
+Các tình huống có thể gặp :
+
 ![image](https://user-images.githubusercontent.com/54675603/182276690-69b217fb-9fb4-4de9-8d3c-9b3481149853.png)
-</br>
+
 Nguyên tắc này có thể được đơn giản hóa thành những điều kiện đơn giản:</br>
 - Nếu bạn gặp “End of maze” là nơi cần đến thì sẽ dừng lại.
 - Nếu bạn gặp “Straight or Right ” đi thẳng hoặc rẽ phải ta sẽ đi thẳng.
@@ -171,7 +176,7 @@ Khi Robot đến ngã ba hay ngã tư thì ưu tiên rẽ trái, nếu không c�
 Ví dụ : rẽ trái – đi thẳng – rẽ phải – rẽ trái : ta được mảng : “LSRL”
 
 ### Code
-```sh
+```cpp
 void loop()
 {
   readLFSsensors();
@@ -215,22 +220,22 @@ Sau khi có được 1 mảng ghi lại kết quả đường đi , ta sẽ dùn
  
  ![image](https://user-images.githubusercontent.com/54675603/182277319-aee27b31-b9b8-4497-8d8e-614c289c20a6.png)
  
- ```sh
- Ta sẽ có mảng đường đi:  path = [LBLLLBSBLLBSLL] và pathLengh = 14
- Sau khi tối ưu :
-    path = [LBLLLBSBLLBSLL] ==> LBL = S
-    path = [SLLBSBLLBSLL] ==> LBS = R
-    path = [SLRBLLBSLL] ==> RBL = B
-    path = [SLBLBSLL] ==> LBL = S
-    path = [SSBSLL] ==> SBS = B
-    path = [SBLL] ==> SBL = R
-    path = [RL]
- Như vậy ta chỉ cần di chuyển ở lần 2 là : Right – Left.
-```
+
+ Ta sẽ có mảng đường đi: </br> 
+ _path = [LBLLLBSBLLBSLL] và pathLengh = 14_ </br></br>
+ Sau khi tối ưu : </br>
+    _path = [LBLLLBSBLLBSLL] ==> LBL = S_ </br>
+    _path = [SLLBSBLLBSLL] ==> LBS = R_ </br>
+    _path = [SLRBLLBSLL] ==> RBL = B_ </br>
+    _path = [SLBLBSLL] ==> LBL = S_ </br>
+    _path = [SSBSLL] ==> SBS = B_ </br>
+    _path = [SBLL] ==> SBL = R_ </br>
+    _path = [RL]_ </br></br>
+ Như vậy ta chỉ cần di chuyển ở lần 2 là : _Right – Left._ </br>
 
 ### Code Maze và code tối ưu đường đi:
 
- ```sh
+ ```cpp
 void recIntersection(char direction)
 {
   path[pathLength] = direction; // Store the intersection in the path variable.
@@ -285,7 +290,7 @@ void recIntersection(char direction)
 ```
 ### Hàm Main
 
- ```sh
+ ```cpp
 void loop() 
 {
   ledBlink(1);
@@ -337,7 +342,7 @@ void loop()
 
 ### Hàm di chuyển lần thứ 2
 
- ```sh
+ ```cpp
  void mazeTurn (char dir) 
 {
   switch(dir)
