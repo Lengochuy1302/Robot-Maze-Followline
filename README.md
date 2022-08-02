@@ -1,6 +1,6 @@
 
 &copy;[Lê Ngọc Huy](https://www.facebook.com/profile.php?id=100019732021938)
- 
+
 ## MỤC LỤC
 
 
@@ -15,8 +15,7 @@ III. THIẾT KẾ ROBOT DÒ ĐƯỜNG TRONG MÊ CUNG
     B. Thiết kế cơ khí	
     C. Phần điều khiển	
     D. Thuật toán dò đường trong mê cung	
-IV. KẾT QUẢ NGHIÊN CỨU	
-V. TÀI LIỆU THAM KHẢO	
+IV. VIDEO DEMO
 ```
 
 ## ĐIỀU KHIỂN ROBOT DÒ ĐƯỜNG TRONG MÊ CUNG
@@ -366,8 +365,8 @@ void loop()
    }
  }
 ```
-
-#### Video Demo
+#### IV. VIDEO DEMO
 
 [![Watch the video](https://user-images.githubusercontent.com/54675603/182280595-a70277a8-44e2-4062-8269-2d41518088d5.png)](https://youtu.be/M-_S04fe40c) 
+
 
