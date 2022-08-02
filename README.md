@@ -31,7 +31,7 @@ Năm 1949, máy phay điều khiển số ra đời phục vụ sản xuất ở
 ##### CÁC NGHIÊN CỨU LIÊN QUAN
 
 ##### A. Mạch Arduino
-</br></br>
+
 Các bo mạch Arduino thật ra là bo mạch vi xử lý được dùng để lập trình tương tác với các thiết bị phần cứng như cảm biến, động cơ, đèn hoặc các thiết bị khác. Đặc điểm nổi bật của Arduino là môi trường phát triển ứng dụng cực kỳ dễ sử dụng, với một ngôn ngữ lập trình có thể học một cách nhanh chóng ngay cả với người ít am hiểu về điện tử và lập trình. Và điều làm nên hiện tượng Arduino chính là mức giá rất thấp và tính chất nguồn mở từ phần cứng tới phần mềm. Bo mạch ArduinoUNO là bo mạch thông dụng nhất. ArduinoUno sử dụng chip Atmega328. có 14 chân vào/ra sô, 6 chân vào tương tự, thạch anh dao động 16Mhz.</br></br>
 Thông số kĩ thuật:
 
